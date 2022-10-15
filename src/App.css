@@ -1,0 +1,162 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.loading{
+  display:flex;
+  align-items:center;
+  justify-content: center;
+}
+
+header {
+  height: 200px;
+  text-align:center;
+  padding: 20px;
+}
+
+header h1{
+  margin-bottom: 10px;
+}
+
+header p{
+  font-size: 11.7px;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  justify-content:center;
+  align-items: center;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+.card {
+  cursor: pointer;
+  background-color: transparent;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card-front{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card li {
+  list-style: none;
+  padding-bottom: 10px;
+}
+
+@media (max-width: 800px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Character Page */
+
+.section{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  padding: 50px;
+}
+
+.imgBox{
+  position: relative;
+  width: 50%;
+  height: 100%;
+}
+.imgBox:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+
+}
+
+.imgBox img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.contentBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.contentBox h1 {
+  font-weight: 1500;
+  font-size: 2.5em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: inline-block;
+  letter-spacing: 1px;
+  color: #000;
+}
+
+.icon{
+  font-weight: 1000;
+  margin-right: 10px;
+  font-size: 1em;
+  color: #000;
+}
+
+.field{
+  margin-bottom: 5px;
+}
+
+.field span {
+  font-weight: bold;
+}
+
+.field:last-child{
+  margin-top: 20px;
+}
